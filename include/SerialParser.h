@@ -1,0 +1,29 @@
+#pragma once
+
+#include <cstdint>
+#include <vector>
+
+namespace protocol {
+
+class SerialPareser {
+public:
+  SerialParser();
+
+  void parseByte(uint8_t byte);
+  bool hasMessage() const;
+
+  SensorMessage getMessage();
+
+private:
+  void reset();
+
+  ParseState state_;
+  uint8_t currentDeviceId_;
+  uint8_t currentPayloadLength_;
+  std::vector<uint8_t> payloadBuffer_;
+  uint8_t expectedChecksum_;
+
+  std::vector<SensorMessage> proccessedMessages_;
+};
+
+} // namespace protocol
