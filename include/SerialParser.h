@@ -2,10 +2,11 @@
 
 #include <cstdint>
 #include <vector>
+#include "Protocol.h"
 
 namespace protocol {
 
-class SerialPareser {
+class SerialParser {
 public:
   SerialParser();
 
@@ -23,7 +24,7 @@ private:
   std::vector<uint8_t> payloadBuffer_;
   uint8_t expectedChecksum_;
 
-  std::vector<SensorMessage> proccessedMessages_;
+  std::vector<SensorMessage> processedMessages_;
 };
 
 } // namespace protocol
