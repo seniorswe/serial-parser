@@ -10,7 +10,8 @@ static constexpr uint8_t frame_end = 0x55;
 
 enum class ParseState {
   WAITING_FOR_START,
-  READING_HEADER,
+  READING_DEVICE_ID,
+  READING_PAYLOAD_LENGTH,
   READING_PAYLOAD,
   CHECKSUM,
   PROCESSED

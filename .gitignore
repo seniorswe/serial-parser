@@ -52,3 +52,7 @@ Testing/
 .idea/
 *.swp
 *.swo
+
+# Caches
+.cache/
+.clangd/
